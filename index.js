@@ -3,10 +3,10 @@ const moment = require('moment');
 const simpleGit = require('simple-git');
 const FILE_PATH = "./data.json";
 
-// Initialize simple-git
+
 const git = simpleGit();
 
-// Function to generate N random days between Jan 1 and May 31, 2025
+
 const getRandomDaysIn2025JanToMay = (numCommits) => {
     const days = [];
     let date = moment('2025-01-01');
@@ -27,7 +27,7 @@ const getRandomDaysIn2025JanToMay = (numCommits) => {
     return randomDays;
 };
 
-// Recursive function to make commits on random days
+
 const makeCommit = (n, days, commitsMade) => {
     if (commitsMade >= n) {
         git.push((err) => {
@@ -63,6 +63,6 @@ const makeCommit = (n, days, commitsMade) => {
     });
 };
 
-// Start the process
+
 const randomDays = getRandomDaysIn2025JanToMay(100);
 makeCommit(100, randomDays, 0);

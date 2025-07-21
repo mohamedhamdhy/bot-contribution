@@ -1,7 +1,7 @@
 {
-  "name": "guthub-bot",
+  "name": "contribution-graph",
   "version": "1.0.0",
-  "description": "Github bot",
+  "description": "contribution-graph",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
