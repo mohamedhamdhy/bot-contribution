@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Git Contribution Bypass</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <canvas id="bgCanvas"></canvas>
+
+    <div id="dashboard">
+      <div id="header">
+        <h1>Git Contribution Bypass</h1>
+        <span id="developer">Developed by Mohamed Al Hamdhy</span>
+      </div>
+
+      <div class="controls">
+        <input
+          type="text"
+          id="startDate"
+          placeholder="Start Date YYYY-MM-DD"
+          value="2026-01-01"
+        />
+        <input
+          type="text"
+          id="endDate"
+          placeholder="End Date YYYY-MM-DD"
+          value="2026-01-05"
+        />
+
+        <div class="number-control">
+          <button id="decrease">-</button>
+          <input
+            type="number"
+            id="commitsPerDay"
+            value="20"
+            min="1"
+            max="100"
+          />
+          <button id="increase">+</button>
+        </div>
+
+        <input type="text" id="commitMessage" value="Commit message" />
+        <button id="startBtn">START</button>
+        <button id="stopBtn" disabled>STOP</button>
+      </div>
+
+      <div class="progress-container">
+        <label>Overall Progress</label>
+        <div class="progress-bar">
+          <div id="overallProgress" class="progress-fill">0%</div>
+        </div>
+
+        <label>Day Progress</label>
+        <div class="progress-bar">
+          <div id="dayProgress" class="progress-fill">0%</div>
+        </div>
+      </div>
+
+      <div id="log"></div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
