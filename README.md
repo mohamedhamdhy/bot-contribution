@@ -1,106 +1,190 @@
-# 🤖 GitHub Contribution Bot
+# Bot Contribution
 
-A JARVIS-style GitHub contribution bot with a live dashboard that automates commits on any repository. Features real-time progress, smooth animations, commit customization, and GitHub authentication.
+[![Node.js](https://img.shields.io/badge/Node.js-18.x-green.svg)](https://nodejs.org/)
+[![Express](https://img.shields.io/badge/Express-4.x-blue.svg)](https://expressjs.com/)
+[![License](https://img.shields.io/badge/license-ISC-blue.svg)](LICENSE)
 
-![GITSYS Dashboard](https://raw.githubusercontent.com/mohamedhamdhy/micro-js-graph/main/assets/GITSYS.png)
+## 📋 Table of Contents
 
----
+- [Features](#-features)
+- [Architecture](#-architecture)
+- [Tech Stack](#-tech-stack)
+- [Project Structure](#-project-structure)
+- [Getting Started](#-getting-started)
+- [Environment Variables](#-environment-variables)
+- [Development](#-development)
+- [Contributing](#-contributing)
+- [License](#-license)
 
-## 🚀 Features
+## ✨ Features
 
-- **Automated Git Commits:** Commit multiple times per day to fill your GitHub contribution graph.
-- **Custom Date Ranges:** Specify start and end dates for your commits.
-- **Custom Commit Messages:** Define a base commit message for all automated commits.
-- **Smooth Progress Bars:** Real-time, fluid progress tracking for overall and per-day commits.
-- **Stop & Resume:** Pause or stop commit execution at any time.
-- **Animated JARVIS UI:** Cyber HUD-inspired dashboard with animated background.
-- **GitHub Login Integration:** Authenticate with GitHub to ensure commits are pushed properly.
-- **No Login? No Commits:** Ensures the user is authenticated before running the bot.
-- **Real-Time Logging:** Logs each commit to the dashboard as it executes.
+### 🚀 API
+- **RESTful API architecture**
 
----
+### 🛠️ Infrastructure
+- **Real-time WebSocket communication**
 
-## 📥 Getting Started
+
+## 🏗️ Architecture
+
+This project follows a simple modular structure with clear separation of concerns.
+
+## 🚀 Tech Stack
+
+### Core
+- **Express.js**
+- **dotenv**
+- **Axios**
+
+### Communication
+- **Socket.IO (WebSocket)**
+
+
+## 📁 Project Structure
+
+```
+contribution-graph/
+├── .gitignore
+├── assets/   # assets module
+│   └── GITSYS.png
+├── commitRunner.js
+├── data.json
+├── index.html
+├── package-lock.json
+├── package.json
+├── README.md
+├── script.js
+├── server.js
+└── style.css
+```
+
+## 🚦 Getting Started
 
 ### Prerequisites
 
-- Node.js (v16+ recommended)
-- Git installed and configured
-- Internet connection for pushing commits
-- GitHub account for authentication (OAuth required for pushing)
+- Node.js >= 18.x
+- npm or yarn
 
-### Installation & Usage
+### Installation
 
+1. **Clone the repository**
 ```bash
-# Clone the repo
-git clone https://github.com/mohamedhamdhy/micro-js-graph
-cd micro-js-graph
+git clone https://github.com/mohamedhamdhy/bot-contribution
+cd contribution-graph
+```
 
-# Install dependencies
+2. **Install dependencies**
+```bash
 npm install
+```
 
-# Start the server
+3. **Run the application**
+```bash
 node server.js
 ```
 
-Open your browser at `http://localhost:3000`.
+The server will start on `http://localhost:3000` (or your configured port).
 
-**Configure:**
+## 🔧 Environment Variables
 
-- Start & end dates (YYYY-MM-DD format)
-- Commits per day
-- Base commit message
+No environment variables required.
 
-Press **START** to begin automated commits. Monitor progress in real-time. Press **STOP** if you need to pause or cancel.
+
+
+
+## 🔨 Development
+
+### Available Scripts
+
+```bash
+npm run test                 # Run all tests
+```
+
+### Code Style
+
+Follow the existing code style and conventions in the project.
+
+
+## 🚢 Deployment
+
+### Production Checklist
+
+- [ ] Set `NODE_ENV=production`
+- [ ] Use strong secrets for JWT and session keys
+- [ ] Enable HTTPS / SSL
+- [ ] Configure rate limiting
+- [ ] Setup monitoring and alerting
+- [ ] Enable database backups
+- [ ] Configure CORS properly
+- [ ] Setup reverse proxy (Nginx/Caddy)
+- [ ] Enable compression (gzip)
+- [ ] Configure health check endpoints
+
+## 🔍 Troubleshooting
+
+**JWT Token Invalid**
+- Verify `JWT_SECRET` is set in `.env`
+- Check token expiration
+- Ensure clock synchronization between services
+
+## 🗺️ Roadmap
+
+- [ ] API documentation with Swagger/OpenAPI
+- [ ] CI/CD pipeline setup
+- [ ] Docker containerization
+- [ ] Unit and integration test coverage
+- [ ] Performance monitoring and metrics
+- [ ] Caching layer optimization
+- [ ] API versioning strategy
+- [ ] GraphQL support
+- [ ] Multi-language support (i18n)
+- [ ] Advanced analytics dashboard
+- [ ] Mobile app integration
+
+## 🤝 Contributing
+
+We welcome contributions! Please follow these guidelines:
+
+1. **Fork the repository**
+2. **Create a feature branch**
+   ```bash
+   git checkout -b feature/amazing-feature
+   ```
+3. **Commit your changes**
+   ```bash
+   git commit -m 'feat: add amazing feature'
+   ```
+4. **Push to the branch**
+   ```bash
+   git push origin feature/amazing-feature
+   ```
+5. **Open a Pull Request**
+
+### Commit Convention
+We follow [Conventional Commits](https://www.conventionalcommits.org/):
+
+- `feat:` New feature
+- `fix:` Bug fix
+- `docs:` Documentation changes
+- `style:` Code style changes
+- `refactor:` Code refactoring
+- `test:` Adding or updating tests
+- `chore:` Maintenance tasks
+
+## 📄 License
+
+This project is licensed under the **ISC** License — see the [LICENSE](LICENSE) file for details.
+
+## 👥 Authors
+
+- **Mohamed Al Hamdhy** — [@mohamedalhamdhy](https://github.com/mohamedalhamdhy)
+
+## 📞 Support
+
+For support, email [mohamedalhamdhy@gmail.com](mailto:mohamedalhamdhy@gmail.com) or open an issue on GitHub.
 
 ---
 
-## 📝 Notes
+**Made with ❤️ by Mohamed Al Hamdhy**
 
-- Ensure your repository exists or has been cloned locally before starting.
-- All commits are pushed automatically after completion.
-- Only authenticated users can run the commit automation.
-- Designed to work safely without overwriting existing work.
-
----
-
-## 🖥️ Dashboard Features
-
-- JARVIS-style HUD with animated background and neon grid.
-- Smooth animated progress bars for overall and per-day commits.
-- Real-time commit log with auto-scrolling and colored output.
-- Responsive controls for easy commit configuration.
-- Cyber HUD aesthetic: black background with `#0ff` neon highlights.
-
----
-
-## 🔒 Security & Safety
-
-- No commits will occur without GitHub login.
-- Stop functionality prevents runaway commits.
-- Runs on your local machine — no external servers process your repo.
-
----
-
-## 🔮 Future Enhancements
-
-- Multi-repo support with selection dropdown
-- Auto-detection of local repositories
-- Dark/Light themes with customizable HUD colors
-- Commit history visualization
-
----
-
-## 🤝 Looking for Collaborators!
-
-I'm actively looking for collaborators to help improve and expand this project! Whether you're into Node.js, UI/UX, GitHub automation, or just want to contribute — you're welcome here.
-
-Feel free to open an issue, submit a PR, or reach out directly. Let's build something cool together. 🚀
-
----
-
-## 👨‍💻 Developer
-
-Developed by **Mohamed Al Hamdy**
-
-🔗 Github: https://github.com/mohamedhamdhy/micro-js-graph
+> *Generated by [READSYS](https://github.com/mohamedalhamdhy/readsys) — README Automation by Mohamed Al Hamdhy*
